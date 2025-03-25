@@ -1,0 +1,25 @@
+app:
+  enable_wandb: false
+  ip: 127.0.0.1
+  port: 6009
+
+model:
+  data_device: cuda
+  source_path: ./data/preprocessed_data/llff/fern
+  model_path: ./data/radegs_0/llff/fern
+
+style:
+  exec_mode: multi
+  style_images: ["./data/styles/7.jpg", "./data/styles/14.jpg", "./data/styles/21.jpg"]
+
+  scene_prompt: ["plants", "floor"]
+  override_matches: [0, 1, 2]
+
+  enable_color_transfer: true
+  method: fast
+
+  stylized_model_path: output/fern_7_14_21
+  
+  iterations_pre_process: 400
+  iterations_stylize: 600
+  iterations_post_process: 400

@@ -1,0 +1,20 @@
+app:
+  enable_wandb: false
+  ip: 127.0.0.1
+  port: 6009
+
+model:
+  data_device: cuda
+  source_path: ./data/preprocessed_data/llff/flower
+  model_path: ./data/radegs_0/llff/flower
+style:
+  exec_mode: single
+  style_images: ["./data/styles/14.jpg"]
+  enable_color_transfer: true
+  method: fast
+
+  stylized_model_path: output/flower_14
+  
+  iterations_pre_process: 400
+  iterations_stylize: 600
+  iterations_post_process: 400

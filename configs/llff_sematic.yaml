@@ -1,0 +1,29 @@
+app:
+  enable_wandb: false
+  ip: 127.0.0.1
+  port: 6009
+
+model:
+  data_device: cuda
+  source_path: ./data/preprocessed_data/llff/flower
+  model_path: ./data/radegs_0/llff/flower
+
+style:
+  exec_mode: sematic
+  style_images: ["./data/styles/32.jpg"]
+
+  scene_prompt: ["flower"]
+  style_prompt: ["bull"]
+  override_matches: [1, 0]
+
+  enable_erode: true
+  enable_isolate: true
+
+  enable_color_transfer: true
+  method: fast
+
+  stylized_model_path: output/flower_32_sematic
+  
+  iterations_pre_process: 400
+  iterations_stylize: 600
+  iterations_post_process: 400

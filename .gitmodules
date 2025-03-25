@@ -1,0 +1,11 @@
+[submodule "abcgs/submodules/lang-segment-anything"]
+	path = abcgs/submodules/lang-segment-anything
+	url = https://github.com/luca-medeiros/lang-segment-anything.git
+	commit = 9bdf77715fa70fca96452184abdc64a6666e0d46
+[submodule "gs/submodules/diff-gaussian-rasterization"]
+	path = gs/submodules/diff-gaussian-rasterization
+	url = https://github.com/graphdeco-inria/diff-gaussian-rasterization.git
+	branch = dr_aa
+[submodule "gs/submodules/simple-knn"]
+	path = gs/submodules/simple-knn
+	url = https://gitlab.inria.fr/bkerbl/simple-knn.git/
