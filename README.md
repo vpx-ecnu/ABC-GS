@@ -1,15 +1,15 @@
 # ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting
 
 [![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/abs/xxxx.xxxxx)
-[![Project Page](https://img.shields.io/badge/Project-Website-green)](https://your-project-page.com)
+[![Project Page](https://img.shields.io/badge/Project-Website-green)](https://vpx-ecnu.github.io/ABC-GS-website/)
 
 This repository contains the official implementation of the paper **"ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting"**, introducing a novel approach for style transfer in 3D scenes represented by Gaussian Splatting.
 
 ## Key Features
 
-- 🎨 **Multi-Modal Style Transfer**: Supports four distinct style loss formulations (FAST, NNFM, KNN-FM, Gram Matrix)
+- 🎨 **Multi Style Transfer Loss**: Supports four distinct style loss formulations (FAST, NNFM, KNN-FM, Gram Matrix)
 - 🌟 **Three-Phase Training**: Pre-processing → Style Transfer → Post-processing pipeline
-- 🔍 **Controllable Style Transfer**: Implements language-driven segmentation and multi-style for Gaussian scene stylization
+- 🔍 **Controllable Style Transfer**: Implements senmatic-aware and multi-style for Gaussian scene stylization
 - 📦 **Modular Architecture**: Extensible design for custom loss functions and training phases
 
 ## Gallery
@@ -50,17 +50,20 @@ pip install gs/submodules/simple-knn
 
 
 ## Quick Start
+### Dataset
+For scene dataset, . For style dataset, you can find it in [ARF](https://github.com/Kai-46/ARF-svox2) repo.
+
 ⚠️ **For optimal stylization results, ensure that the original scene is trained using 0th-order spherical harmonics (SH) coefficients.** Higher-order SH coefficients may introduce artifacts or inconsistencies during the style transfer process. Using 0th-order SH coefficients ensures smoother and more coherent stylization
 
-### Single Mode
+### Single Style Transfer
 ```
 python style_transfer.py --config configs/llff_single.yaml
 ```
-### Sematic Mode
+### Semantic-aware Style Transfer
 ```
-python style_transfer.py --config configs/llff_sematic.yaml
+python style_transfer.py --config configs/llff_semantic.yaml
 ```
-### Multi Mode
+### Multi-Style Transfer
 ```
 python style_transfer.py --config configs/llff_multi.yaml
 ```
@@ -70,15 +73,16 @@ Please check `python style_transfer.py --help` or files under `configs/` for hel
 ## Contact
 
 If you have any questions or suggestions, feel free to open an issue on GitHub.
+You can also contact [Garv1tum](https://github.com/Grav1tum) and [lzlcs](https://github.com/lzlcs) directly.
 
 ## Citation
 
-If you find this project useful, please cite our paper:
+If you find this project useful, please give a star⭐ to this repo and cite our paper:
 ```bibtex
-@article{liu2024abcgs,
+@article{liu2025abcgs,
   title={ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting},
   author={Wenjie Liu, Zhongliang Liu, Xiaoyan Yang, Man Sha and Yang Li},
-  booktitle={ IEEE International Conference on Multimedia and Expo(ICME)},
+  booktitle={IEEE International Conference on Multimedia and Expo(ICME)},
   year={2025}
 }
 ```
