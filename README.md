@@ -77,7 +77,7 @@ If you find this project useful, please cite our paper:
 ```bibtex
 @article{liu2024abcgs,
   title={ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting},
-  author={Author1, Author2, Author3},
+  author={Wenjie Liu, Zhongliang Liu, Xiaoyan Yang, Man Sha and Yang Li},
   booktitle={ IEEE International Conference on Multimedia and Expo(ICME)},
   year={2025}
 }
