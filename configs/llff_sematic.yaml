@@ -5,8 +5,8 @@ app:
 
 model:
   data_device: cuda
-  source_path: ./data/preprocessed_data/llff/flower
-  model_path: ./data/radegs_0/llff/flower
+  source_path: ./data/llff/flower
+  model_path: ./data/3dgs_0/llff/flower
 
 style:
   exec_mode: sematic

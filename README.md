@@ -1,0 +1,69 @@
+# ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting
+
+[![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/abs/xxxx.xxxxx)
+[![Project Page](https://img.shields.io/badge/Project-Website-green)](https://your-project-page.com)
+
+This repository contains the official implementation of the paper **"ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting"**, introducing a novel approach for style transfer in 3D scenes represented by Gaussian Splatting.
+
+## Key Features
+
+- 🎨 **Multi-Modal Style Transfer**: Supports four distinct style loss formulations (FAST, NNFM, KNN-FM, Gram Matrix)
+- 🌟 **Three-Phase Training**: Pre-processing → Style Transfer → Post-processing pipeline
+- 🔍 **Controllable Style Transfer**: Implements language-driven segmentation and multi-style for gaussian scene stylization
+- 📦 **Modular Architecture**: Extensible design for custom loss functions and training phases
+
+## Gallery
+
+### Single Mode
+![](./abcgs/assets/single_horns.jpg)
+![](./abcgs/assets/single_trex.jpg)
+![](./abcgs/assets/single_M60.jpg)
+![](./abcgs/assets/single_truck.jpg)
+### Sematic Mode
+![](./abcgs/assets/sematic_flower.jpg)
+### Multi Mode
+![](./abcgs/assets/multi_fern.jpg)
+
+
+## Installation
+
+### Requirements 
+- NVIDIA GPU with CUDA 11.8
+- Python 3.10
+- PyTorch 2.3.0
+
+
+### Docker
+```
+
+```
+### Conda
+
+```bash
+# Clone repository with submodules
+git clone https://github.com/vpx-ecnu/ABC-GS --recursive
+cd ABC-GS
+
+# Install Python dependencies
+conda env create -f environment.yaml
+conda activate ABC-GS
+pip install abcgs/submodules/lang-segment-anything
+pip install gs/submodules/diff-gaussian-rasterization
+pip install gs/submodules/simple-knn
+```
+
+## Quick Start
+
+### Single Mode
+```
+python style_transfer.py --config configs/llff_single.yaml
+```
+### Sematic Mode
+```
+python style_transfer.py --config configs/llff_sematic.yaml
+```
+### Multi Mode
+```
+python style_transfer.py --config configs/llff_multi.yaml
+```
+
