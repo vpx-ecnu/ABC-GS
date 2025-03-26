@@ -5,3 +5,6 @@ __pycache__/
 debug/
 .vscode/
 cache/
+input_scene
+input_styles
+input_gaussian

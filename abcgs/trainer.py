@@ -41,12 +41,12 @@ class StyleTrainer:
         self.stylize_loss_fn = stylize_loss_dict[config.style.method](config)
         
         self._initialize_components()
-        self._initialize_phases()
-        self._initialize_observers()
-        preprocess(self)
         
         
     def train(self):
+        self._initialize_phases()
+        self._initialize_observers()
+        preprocess(self)
         
         for self.iteration in range(1, self.total_iterations + 1):
             handle_network_gui(self)

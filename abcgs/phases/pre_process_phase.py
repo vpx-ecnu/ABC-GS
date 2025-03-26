@@ -43,6 +43,8 @@ class PreProcessPhase(BasePhase):
         }, timer.elapsed_ms
         
     def _densification(self, iteration):
+        delta_iteration = iteration - self.begin_iter
+        
         gaussians = self.trainer.gaussians
         opt = self.trainer.config.opt
         scene = self.trainer.scene
@@ -55,9 +57,11 @@ class PreProcessPhase(BasePhase):
         gaussians.max_radii2D[visibility_filter] = torch.max(gaussians.max_radii2D[visibility_filter], radii[visibility_filter])
         gaussians.add_densification_stats(viewspace_point_tensor, visibility_filter)
 
-        if iteration > opt.densify_from_iter and iteration % opt.densification_interval == 0:
-            size_threshold = 20 if iteration > opt.opacity_reset_interval else None
-            gaussians.densify_and_prune(opt.densify_grad_threshold, 0.005, scene.cameras_extent, size_threshold, radii)
+        if delta_iteration == 0:
+            return
         
-        if iteration % opt.opacity_reset_interval == 0 or (dataset.white_background and iteration == opt.densify_from_iter):
+        if delta_iteration % self.trainer.config.style.style_densification_interval == 0:
+            gaussians.densify_and_prune(opt.densify_grad_threshold, 0.005, scene.cameras_extent, 20, radii)
+        
+        if delta_iteration % opt.opacity_reset_interval == 0:
             gaussians.reset_opacity()

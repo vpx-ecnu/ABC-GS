@@ -157,7 +157,6 @@ class ConfigManager(Serializable):
             
         if self.style.exec_mode == 'single':
             
-            assert not self.style.override_matches, "single mode do not require override matches."
             self.style.override_matches = [0]
             self.style.scene_classes = 1
             self.style.style_classes = 1
@@ -213,6 +212,8 @@ class ConfigManager(Serializable):
         model_vars = vars(self.model).copy()
         with open(os.path.join(self.style.stylized_model_path, "cfg_args"), "w") as cfg_log_f:
             cfg_log_f.write(str(Namespace(**model_vars)))
+            
+        self.save_yaml(os.path.join(self.style.stylized_model_path, "config.yaml"))
     
     
 def parse_args():

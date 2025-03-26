@@ -5,12 +5,12 @@ app:
 
 model:
   data_device: cuda
-  source_path: ./data/llff/fern
-  model_path: ./data/3dgs_0/llff/fern
+  source_path: ./input_scene/llff/fern
+  model_path: ./input_gaussian/llff/fern
 
 style:
   exec_mode: multi
-  style_images: ["./data/styles/7.jpg", "./data/styles/14.jpg", "./data/styles/21.jpg"]
+  style_images: ["./input_styles/7.jpg", "./input_styles/14.jpg", "./input_styles/21.jpg"]
 
   scene_prompt: ["plants", "floor"]
   override_matches: [0, 1, 2]

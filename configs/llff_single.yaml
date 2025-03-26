@@ -5,11 +5,11 @@ app:
 
 model:
   data_device: cuda
-  source_path: ./data/llff/flower
-  model_path: ./data/3dgs_0/llff/flower
+  source_path: ./input_scene/llff/flower
+  model_path: ./input_gaussian/llff/flower
 style:
   exec_mode: single
-  style_images: ["./data/styles/14.jpg"]
+  style_images: ["./input_styles/14.jpg"]
   enable_color_transfer: true
   method: fast
 

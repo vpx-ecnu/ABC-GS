@@ -2,7 +2,7 @@ import cv2
 import torch 
 import numpy as np
 import os
-
+from tqdm import tqdm
 from gs.gaussian_renderer import render
 
 def read_and_resize_image(image_path, target_height):
@@ -63,7 +63,10 @@ def render_viewpoint(trainer, path="./debug"):
     render_path = os.path.join(path, "render/")
     os.makedirs(render_path, exist_ok=True)
     
-    for i, view in enumerate(trainer.scene.getTrainCameras()):
-        render_image = trainer.get_render_pkgs(view)["render"]
-        cur_render_path = os.path.join(render_path, f"{int(i):04d}.png")
-        render_RGBcolor_images(cur_render_path, render_image)
+    cameras = trainer.scene.getTrainCameras()
+    with tqdm(total=len(cameras), desc="Render") as pbar:
+        for i, view in enumerate(cameras):
+            render_image = trainer.get_render_pkgs(view)["render"]
+            cur_render_path = os.path.join(render_path, f"{int(i):04d}.png")
+            render_RGBcolor_images(cur_render_path, render_image)
+            pbar.update(1)

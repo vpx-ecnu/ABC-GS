@@ -13,8 +13,8 @@ class BasePhase(ABC):
         self.viewpoint_stack = None
 
     def update(self, iteration, loss):
-        if self.name == "Stylize" or self.name == "Post Process":
-            render_RGBcolor_images("./debug/image.jpg", self.render_pkg["render"])
+        # if self.name == "Stylize" or self.name == "Post Process":
+        #     render_RGBcolor_images("./debug/image.jpg", self.render_pkg["render"])
         loss.backward()
         self._densification(iteration)
         self.trainer.gaussians.optimizer.step()

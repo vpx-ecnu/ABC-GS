@@ -72,7 +72,7 @@ class CheckpointSaver(TrainingObserver):
             print("\n[ITER {}] Saving Checkpoint".format(metrics.iteration))
             torch.save(
                 (self.trainer.gaussians.capture(), metrics.iteration),
-                self.trainer.config.model.model_path + "/chkpnt" + str(metrics.iteration) + ".pth",
+                self.trainer.config.style.stylized_model_path + "/chkpnt" + str(metrics.iteration) + ".pth",
             )
         
         if metrics.iteration in self.trainer.config.ckpt.save_iterations:
@@ -80,7 +80,7 @@ class CheckpointSaver(TrainingObserver):
     
     def _save_gaussians(self, iteration):
         print("\n[ITER {}] Saving Gaussians".format(iteration))
-        self.trainer.scene.save(self.trainer.total_iterations, self.trainer.config.model.model_path)
+        self.trainer.scene.save(self.trainer.total_iterations, self.trainer.config.style.stylized_model_path)
         
     def on_training_end(self):
         self._save_gaussians(self.trainer.total_iterations)
