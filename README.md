@@ -9,7 +9,7 @@ This repository contains the official implementation of the paper **"ABC-GS: Ali
 
 - 🎨 **Multi-Modal Style Transfer**: Supports four distinct style loss formulations (FAST, NNFM, KNN-FM, Gram Matrix)
 - 🌟 **Three-Phase Training**: Pre-processing → Style Transfer → Post-processing pipeline
-- 🔍 **Controllable Style Transfer**: Implements language-driven segmentation and multi-style for gaussian scene stylization
+- 🔍 **Controllable Style Transfer**: Implements language-driven segmentation and multi-style for Gaussian scene stylization
 - 📦 **Modular Architecture**: Extensible design for custom loss functions and training phases
 
 ## Gallery
@@ -32,11 +32,6 @@ This repository contains the official implementation of the paper **"ABC-GS: Ali
 - Python 3.10
 - PyTorch 2.3.0
 
-
-### Docker
-```
-
-```
 ### Conda
 
 ```bash
@@ -52,7 +47,10 @@ pip install gs/submodules/diff-gaussian-rasterization
 pip install gs/submodules/simple-knn
 ```
 
+
+
 ## Quick Start
+⚠️ **For optimal stylization results, ensure that the original scene is trained using 0th-order spherical harmonics (SH) coefficients.** Higher-order SH coefficients may introduce artifacts or inconsistencies during the style transfer process. Using 0th-order SH coefficients ensures smoother and more coherent stylization
 
 ### Single Mode
 ```
@@ -67,3 +65,28 @@ python style_transfer.py --config configs/llff_sematic.yaml
 python style_transfer.py --config configs/llff_multi.yaml
 ```
 
+Please check `python style_transfer.py --help` or files under `configs/` for help.
+
+## Contact
+
+If you have any questions or suggestions, feel free to open an issue on GitHub.
+
+## Citation
+
+If you find this project useful, please cite our paper:
+```bibtex
+@article{liu2024abcgs,
+  title={ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting},
+  author={Author1, Author2, Author3},
+  booktitle={ IEEE International Conference on Multimedia and Expo(ICME)},
+  year={2025}
+}
+```
+
+## Acknowledgements
+
+This project builds upon the following works:
+- **3D Gaussian Splatting**:  
+  The core 3D Gaussian rendering and optimization framework is based on the [3D Gaussian Splatting](https://github.com/graphdeco-inria/gaussian-splatting) implementation by Bernhard Kerbl et al. 
+- **Lang-Segment-Anything**: \
+    The semantic segmentation functionality is powered by [Lang-Segment-Anything](https://github.com/luca-medeiros/lang-segment-anything), a language-driven segmentation tool.
