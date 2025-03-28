@@ -210,6 +210,7 @@ class ConfigManager(Serializable):
         
         from argparse import Namespace  # for compatibility
         model_vars = vars(self.model).copy()
+        model_vars['model_path'] = self.style.stylized_model_path
         with open(os.path.join(self.style.stylized_model_path, "cfg_args"), "w") as cfg_log_f:
             cfg_log_f.write(str(Namespace(**model_vars)))
             
