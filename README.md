@@ -51,7 +51,7 @@ pip install gs/submodules/simple-knn
 
 ## Quick Start
 ### Dataset and Checkpoint
-* For scene dataset, you can LLFF dataset in [NeRF](https://github.com/bmild/nerf) and T&T dataset in [3DGS](https://github.com/graphdeco-inria/gaussian-splatting). 
+* For scene dataset, you can find LLFF dataset in [NeRF](https://github.com/bmild/nerf) and T&T dataset in [3DGS](https://github.com/graphdeco-inria/gaussian-splatting). 
 * For style dataset, you can find it in [ARF](https://github.com/Kai-46/ARF-svox2).
 * **For optimal stylization results, ensure that the original scene is trained using 0th-order spherical harmonics (SH) coefficients.** Higher-order SH coefficients may introduce artifacts or inconsistencies during the style transfer process. Using 0th-order SH coefficients ensures smoother and more coherent stylization.
 
