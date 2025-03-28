@@ -26,11 +26,11 @@ def _init_style_masks(config, style_images, segmenter):
         _, h, w = style_images[i].shape
         style_masks.append(torch.zeros((h, w), device=config.model.data_device))
     
-    if config.style.exec_mode != 'sematic':
+    if config.style.exec_mode != 'semantic':
         for i in range(num_style_images):
             style_masks[i][:, :] = i
     else:
-        # For Sematic Execute Mode
+        # For semantic Execute Mode
         style_name = os.path.basename(config.style.style_images[0])
         cache_path = os.path.join(config.style.style_segmentation_cache_path, 
                                 f"{style_name}/{config.style.style_prompt}/")

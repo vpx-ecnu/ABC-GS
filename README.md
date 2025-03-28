@@ -20,9 +20,9 @@ This repository contains the official implementation of the paper **"ABC-GS: Ali
 ![](./abcgs/assets/single_M60.jpg)
 ![](./abcgs/assets/single_truck.jpg)
 ### Semantic-aware Style Transfer
-![](./abcgs/assets/sematic_flower.jpg)
+![](./abcgs/assets/semantic_flower.jpg)
 ### Compositional Style Transfer
-![](./abcgs/assets/multi_fern.jpg)
+![](./abcgs/assets/compositional_fern.jpg)
 
 
 ## Installation
@@ -65,7 +65,7 @@ python style_transfer.py --config configs/llff_semantic.yaml
 ```
 ### Compositional Style Transfer
 ```
-python style_transfer.py --config configs/llff_multi.yaml
+python style_transfer.py --config configs/llff_compositional.yaml
 ```
 
 Please check `python style_transfer.py --help` or files under `configs/` for help.

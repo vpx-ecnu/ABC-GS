@@ -1,0 +1,20 @@
+app:
+  enable_wandb: false
+  ip: 127.0.0.1
+  port: 6009
+
+model:
+  data_device: cuda
+  source_path: ./input_scene/tnt/truck
+  model_path: ./input_gaussian/tnt/truck
+style:
+  exec_mode: single
+  style_images: ["./input_styles/14.jpg"]
+  enable_color_transfer: true
+  method: fast
+
+  stylized_model_path: output/truck_14
+  
+  iterations_pre_process: 1000
+  iterations_stylize: 2000
+  iterations_post_process: 1000

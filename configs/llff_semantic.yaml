@@ -9,7 +9,7 @@ model:
   model_path: ./input_gaussian/llff/flower
 
 style:
-  exec_mode: sematic
+  exec_mode: semantic
   style_images: ["./input_styles/32.jpg"]
 
   scene_prompt: ["flower"]
@@ -22,7 +22,7 @@ style:
   enable_color_transfer: true
   method: fast
 
-  stylized_model_path: output/flower_32_sematic
+  stylized_model_path: output/flower_32_semantic
   
   iterations_pre_process: 400
   iterations_stylize: 600

@@ -82,7 +82,7 @@ class CheckpointConfig(Serializable):
 @dataclass
 class StyleConfig(Serializable):
     # Specify which mode to use
-    exec_mode: str = field("single", choices=["single", "sematic", "multi"])
+    exec_mode: str = field("single", choices=["single", "semantic", "compositional"])
     
     # Model path for stylization output
     stylized_model_path: str = field(None, alias="-o")
@@ -168,14 +168,14 @@ class ConfigManager(Serializable):
             
             self.style.scene_classes = len(self.style.scene_prompt) + 1
             
-            if self.style.exec_mode == "sematic":
+            if self.style.exec_mode == "semantic":
                 self.style.style_classes = len(self.style.style_prompt) + 1
                 assert len(self.style.style_prompt) > 0, "single mode requires prompts for style."
-                assert len(self.style.style_images) == 1, "sematic mode requires only 1 image."
+                assert len(self.style.style_images) == 1, "semantic mode requires only 1 image."
 
             else:
                 self.style.style_classes = len(self.style.style_images)
-                assert len(self.style.style_images) > 1, "sematic mode requires at least 2 images."
+                assert len(self.style.style_images) > 1, "semantic mode requires at least 2 images."
                 
             if not self.style.override_matches:
                 self.style.override_matches = []

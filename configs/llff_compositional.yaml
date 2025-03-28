@@ -9,7 +9,7 @@ model:
   model_path: ./input_gaussian/llff/fern
 
 style:
-  exec_mode: multi
+  exec_mode: compositional
   style_images: ["./input_styles/7.jpg", "./input_styles/14.jpg", "./input_styles/21.jpg"]
 
   scene_prompt: ["plants", "floor"]
