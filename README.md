@@ -14,14 +14,14 @@ This repository contains the official implementation of the paper **"ABC-GS: Ali
 
 ## Gallery
 
-### Single Mode
+### Single Style Transfer
 ![](./abcgs/assets/single_horns.jpg)
 ![](./abcgs/assets/single_trex.jpg)
 ![](./abcgs/assets/single_M60.jpg)
 ![](./abcgs/assets/single_truck.jpg)
-### Sematic Mode
+### Semantic-aware Style Transfer
 ![](./abcgs/assets/sematic_flower.jpg)
-### Multi Mode
+### Compositional Style Transfer
 ![](./abcgs/assets/multi_fern.jpg)
 
 
@@ -50,10 +50,10 @@ pip install gs/submodules/simple-knn
 
 
 ## Quick Start
-### Dataset
-For scene dataset, . For style dataset, you can find it in [ARF](https://github.com/Kai-46/ARF-svox2) repo.
-
-⚠️ **For optimal stylization results, ensure that the original scene is trained using 0th-order spherical harmonics (SH) coefficients.** Higher-order SH coefficients may introduce artifacts or inconsistencies during the style transfer process. Using 0th-order SH coefficients ensures smoother and more coherent stylization
+### Dataset and Checkpoint
+* For scene dataset, you can LLFF dataset in [NeRF](https://github.com/bmild/nerf) and T&T dataset in [3DGS](https://github.com/graphdeco-inria/gaussian-splatting). 
+* For style dataset, you can find it in [ARF](https://github.com/Kai-46/ARF-svox2).
+* **For optimal stylization results, ensure that the original scene is trained using 0th-order spherical harmonics (SH) coefficients.** Higher-order SH coefficients may introduce artifacts or inconsistencies during the style transfer process. Using 0th-order SH coefficients ensures smoother and more coherent stylization.
 
 ### Single Style Transfer
 ```
@@ -63,7 +63,7 @@ python style_transfer.py --config configs/llff_single.yaml
 ```
 python style_transfer.py --config configs/llff_semantic.yaml
 ```
-### Multi-Style Transfer
+### Compositional Style Transfer
 ```
 python style_transfer.py --config configs/llff_multi.yaml
 ```
