@@ -1,6 +1,6 @@
 # ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting
 
-[![arXiv](https://img.shields.io/badge/arXiv-xxxx.xxxxx-b31b1b.svg)](https://arxiv.org/abs/xxxx.xxxxx)
+[![arXiv](https://img.shields.io/badge/arXiv-2503.22218-b31b1b.svg)](https://arxiv.org/abs/2503.22218)
 [![Project Page](https://img.shields.io/badge/Project-Website-green)](https://vpx-ecnu.github.io/ABC-GS-website/)
 
 This repository contains the official implementation of the paper **"ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting"**, introducing a novel approach for style transfer in 3D scenes represented by Gaussian Splatting.
