@@ -79,10 +79,10 @@ You can also contact [Garv1tum](https://github.com/Grav1tum) and [lzlcs](https:/
 
 If you find this project useful, please give a star⭐ to this repo and cite our paper:
 ```bibtex
-@article{liu2025abcgs,
+@article{liu2025abc,
   title={ABC-GS: Alignment-Based Controllable Style Transfer for 3D Gaussian Splatting},
-  author={Wenjie Liu, Zhongliang Liu, Xiaoyan Yang, Man Sha and Yang Li},
-  booktitle={IEEE International Conference on Multimedia and Expo(ICME)},
+  author={Liu, Wenjie and Liu, Zhongliang and Yang, Xiaoyan and Sha, Man and Li, Yang},
+  journal={IEEE International Conference on Multimedia and Expo (ICME)},
   year={2025}
 }
 ```
